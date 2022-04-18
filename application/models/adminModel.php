@@ -41,8 +41,9 @@ class adminModel extends CI_Model {
 		return $this->db->get()->result_array();
 	}
 
-	function insertPasien($a) {
+	function insert_pasien($a) {
         $data = [
+			'id_pasien' => $a['id_pasien'],
 			'nama_pasien' => $a['nama_pasien'],
 			'alamat' => $a['alamat'],
 			'tgl_lahir' => $a['tgl_lahir'],

@@ -19,6 +19,8 @@
 			</div>
 			<div class="card-body">
 				<form action="<?php echo base_url('pasien/insertPasien'); ?>" method="POST" class="px-5">
+					<label class="form-label" for="id_pasien">ID Pasien</label>
+					<input class="form-control" type="text" name="id_pasien"><br>
 					<label class="form-label" for="nama_pasien">Nama</label>
 					<input class="form-control" type="text" name="nama_pasien"><br>
 					<label class="form-label" for="alamat">Alamat</label>

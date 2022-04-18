@@ -9,12 +9,7 @@ class Pasien extends CI_Controller {
 	}
 
 	public function index() {
-		$keyword = $this->input->post('keyword');
-		$data = $this->adminModel->get_data_pasien($keyword);
-		$data = array(
-			'keyword'	=> $keyword,
-			'data'		=> $data
-		);
+		$data = $this->adminModel->get_data_pasien();
 		$this->load->view('pasien/pasien',$data);
 	}
 
@@ -33,18 +28,20 @@ class Pasien extends CI_Controller {
 	}
 
 	public function insertPasien() {
+		$id_pasien = $this->input->post('id_pasien');
 		$nama_pasien = $this->input->post('nama_pasien');
 		$alamat = $this->input->post('alamat');
 		$tgl_lahir = $this->input->post('tgl_lahir');  
 		$no_telp = $this->input->post('no_telp');  
 
 		$data = array(
+			'id_pasien' => $id_pasien,
 			'nama_pasien' => $nama_pasien,
 			'alamat' => $alamat,
 			'tgl_lahir' => $tgl_lahir,
 			'no_telp' => $no_telp,
 		);
-		$this->adminModel->insertPasien($data, 'pasiens');
+		$this->adminModel->insert_pasien($data, 'pasiens');
 		redirect(base_url('pasien'));
 	}
 
