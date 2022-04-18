@@ -3,24 +3,24 @@
   <head> 
     <meta charset="utf-8"> 
     <title>Tambah Tindakan</title> 
-    <!-- load bootstrap css file --> 
-    <link href="<?php echo base_url('assets/css/bootstrap.min.css');?>" rel="stylesheet"> 
   </head> 
-  <body> 
+  <body>
+  <?php
+    $this->load->view('layout/navbar');
+  ?>   
+    <div class="container">
     <h3>Tambah Tindakan</h3>
- 
-    <div class="container"> 
     <div class="card-body">
                     <div class="row">
                         <div class="col-12">
                             <form action="<?php echo base_url('tindakan/insert') ?>" method="post" enctype="multipart/form-data">
                                 <div class="mb-3">
                                     <label for="judul" class="form-label">ID Tindakan</label>
-                                    <input type="text" name="id" class="form-control" id="nama">
+                                    <input type="text" name="id_tindakan" class="form-control" id="nama">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="judul" class="form-label">Nama</label>
-                                    <input type="text" name="nama" class="form-control" id="nama">
+                                    <label for="judul" class="form-label">Nama Tindakan</label>
+                                    <input type="text" name="nama_tindakan" class="form-control" id="nama">
                                 </div>
                                 <div class="mb-3">
                                     <label for="penulis" class="form-label">Biaya</label>

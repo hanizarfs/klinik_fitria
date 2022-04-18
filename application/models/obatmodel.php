@@ -8,48 +8,48 @@ class obatmodel extends CI_Model {
     } 
     function get_obat()
     {
-        $query = $this->db->query("SELECT * FROM obat");
+        $query = $this->db->query("SELECT * FROM obats");
         return $query->result_array();
     }
     function get_detail($a)
     {
-        $this->db->where('id', $a);
-        return $this->db->get('obat')->row_array();
+        $this->db->where('id_obat', $a);
+        return $this->db->get('obats')->row_array();
     }
 
     function insert($a)
     {
         $data = [
-            'id' => $a['id'],
-            'nama' => $a['nama'],
+            'id_obat' => $a['id_obat'],
+            'nama_obat' => $a['nama_obat'],
             'harga' => $a['harga'],
         ];
-        return $this->db->insert('obat', $data);
+        return $this->db->insert('obats', $data);
     }
 
-    function update($a, $id)
+    function update($a, $id_obat)
     {
         $data = [
-            'id' => $a['id'],
-            'nama' => $a['nama'],
+            'id_obat' => $a['id_obat'],
+            'nama_obat' => $a['nama_obat'],
             'harga' => $a['harga'],
         ];
-        $this->db->where('id', $id);
-        return $this->db->update('obat', $data);
+        $this->db->where('id_obat', $id_obat);
+        return $this->db->update('obats', $data);
     }
 
-    function delete($id)
+    function delete($id_obat)
     {
-        $this->db->where('id', $id);
-        return $this->db->delete('obat');
+        $this->db->where('id_obat', $id);
+        return $this->db->delete('obats');
     }
 
     function get_keyword($keyword=null)
     {
         $this->db->select('*');
-        $this->db->from('obat');
+        $this->db->from('obats');
         if(!empty($keyword)){
-            $this->db->like('nama', $keyword);
+            $this->db->like('nama_obat', $keyword);
         }
         return $this->db->get()->result_array();
     }

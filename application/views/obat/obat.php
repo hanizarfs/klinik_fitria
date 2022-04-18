@@ -3,8 +3,6 @@
   <head> 
     <meta charset="utf-8"> 
     <title>Obat</title> 
-    <!-- load bootstrap css file --> 
-    <link href="<?php echo base_url('assets/css/bootstrap.min.css');?>" rel="stylesheet"> 
   </head> 
   <body> 
 
@@ -33,12 +31,12 @@
         </tr>
         <?php foreach ($data as $item) {?>
             <tr>
-                <td><?php echo $item['id'];?></td>
-                <td><?php echo $item['nama'];?></td>
+                <td><?php echo $item['id_obat'];?></td>
+                <td><?php echo $item['nama_obat'];?></td>
                 <td><?php echo $item['harga'];?></td>
                 <td>
-                  <a href="obat/edit/<?php echo $item['id']; ?>" class="btn btn-warning">Edit</a>
-                  <a href="obat/delete/<?php echo $item['id']; ?>" class="btn btn-danger">Hapus</a>
+                  <a href="obat/edit/<?php echo $item['id_obat']; ?>" class="btn btn-warning">Edit</a>
+                  <a href="obat/delete/<?php echo $item['id_obat']; ?>" class="btn btn-danger">Hapus</a>
                 </td>
             </tr>
         <?php } ?>

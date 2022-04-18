@@ -3,11 +3,8 @@
   <head> 
     <meta charset="utf-8"> 
     <title>Tindakan</title> 
-    <!-- load bootstrap css file --> 
-    <link href="<?php echo base_url('assets/css/bootstrap.min.css');?>" rel="stylesheet"> 
   </head> 
   <body> 
-
   <?php
     $this->load->view('layout/navbar');
   ?> 
@@ -26,19 +23,19 @@
       </form>
         <tr>
             <th>ID Tindakan</th>
-            <th>Nama</th>
+            <th>Nama Tindakan</th>
             <th>Biaya</th>
             <th>Aksi</th>
 
         </tr>
         <?php foreach ($data as $item) {?>
             <tr>
-                <td><?php echo $item['id'];?></td>
-                <td><?php echo $item['nama'];?></td>
+                <td><?php echo $item['id_tindakan'];?></td>
+                <td><?php echo $item['nama_tindakan'];?></td>
                 <td><?php echo $item['biaya'];?></td>
                 <td>
-                  <a href="tindakan/edit/<?php echo $item['id']; ?>" class="btn btn-warning">Edit</a>
-                  <a href="tindakan/delete/<?php echo $item['id']; ?>" class="btn btn-danger">Hapus</a>
+                  <a href="tindakan/edit/<?php echo $item['id_tindakan']; ?>" class="btn btn-warning">Edit</a>
+                  <a href="tindakan/delete/<?php echo $item['id_tindakan']; ?>" class="btn btn-danger">Hapus</a>
                 </td>
             </tr>
         <?php } ?>

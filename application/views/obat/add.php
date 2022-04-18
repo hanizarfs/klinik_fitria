@@ -3,24 +3,24 @@
   <head> 
     <meta charset="utf-8"> 
     <title>Tambah Obat</title> 
-    <!-- load bootstrap css file --> 
-    <link href="<?php echo base_url('assets/css/bootstrap.min.css');?>" rel="stylesheet"> 
   </head> 
   <body> 
-    <h3>Tambah Obat</h3>
- 
+  <?php
+    $this->load->view('layout/navbar');
+  ?>  
     <div class="container"> 
+    <h3>Tambah Obat</h3>
     <div class="card-body">
                     <div class="row">
                         <div class="col-12">
                             <form action="<?php echo base_url('obat/insert') ?>" method="post" enctype="multipart/form-data">
                                 <div class="mb-3">
                                     <label for="judul" class="form-label">ID Obat</label>
-                                    <input type="text" name="id" class="form-control" id="nama">
+                                    <input type="text" name="id_obat" class="form-control" id="nama">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="judul" class="form-label">Nama</label>
-                                    <input type="text" name="nama" class="form-control" id="nama">
+                                    <label for="judul" class="form-label">Nama Obat</label>
+                                    <input type="text" name="nama_obat" class="form-control" id="nama">
                                 </div>
                                 <div class="mb-3">
                                     <label for="penulis" class="form-label">Harga</label>
