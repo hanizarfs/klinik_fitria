@@ -9,7 +9,7 @@ class Pasien extends CI_Controller {
 	}
 
 	public function index() {
-		$data = $this->adminModel->get_data_pasien();
+		$data['data'] = $this->adminModel->get_data_pasien();
 		$this->load->view('pasien/pasien',$data);
 	}
 

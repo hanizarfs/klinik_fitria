@@ -30,7 +30,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<?php foreach ($data as $row) { ?>
+						<?php forEach ($data as $row) { ?>
 						<tr>
 							<td><?php $row['id_pasien'] ?></td>
 							<td scope="row"><?= $row['nama_pasien'] ?></td>
