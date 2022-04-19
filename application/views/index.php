@@ -18,6 +18,7 @@
 		.about {
 			height: 100vh;
 		}
+
 	</style>
 </head>
 
@@ -62,7 +63,9 @@
 				<div class="row h-100">
 					<div class="col-6 d-flex flex-column justify-content-center">
 						<h1>Klink Fitria</h1>
-						<h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quia vel, repudiandae necessitatibus quos assumenda obcaecati molestiae eaque incidunt omnis illum praesentium, voluptate fugiat commodi cumque dolore doloremque error magnam.</h5>
+						<h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quia vel, repudiandae
+							necessitatibus quos assumenda obcaecati molestiae eaque incidunt omnis illum praesentium,
+							voluptate fugiat commodi cumque dolore doloremque error magnam.</h5>
 					</div>
 					<div class="col-6 d-flex flex-column justify-content-center">
 						<img src="assets/wpa.gif" alt="">
@@ -73,14 +76,84 @@
 
 		<section class="about">
 			<div class="container h-100">
-				<div class="row h-100">
-					<div class="col-6"></div>
+				<div class="row h-100 gx-5">
+					<div class="col-6 d-flex flex-column justify-content-center">
+						<img src="https://media.istockphoto.com/photos/its-our-aim-to-get-you-to-optimum-health-picture-id1304125415?b=1&k=20&m=1304125415&s=170667a&w=0&h=3bUCiYdM8jJu9MQKpn87RCih8pwSA92NzdESYFuT3mo="
+							alt="About Klinik Fitria" class="img-fluid p-5">
+					</div>
 					<div class="col-6 d-flex flex-column justify-content-center">
 						<h2>Tentang Kami</h2>
 						<p>
-							Klinik Fitira adalah Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto ab, tenetur repellendus corrupti exercitationem expedita quasi fugit excepturi obcaecati nihil in, qui ratione, officia sint illum consectetur iusto. Odit, mollitia!
+							Klinik Fitira adalah Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto
+							ab, tenetur repellendus corrupti exercitationem expedita quasi fugit excepturi obcaecati
+							nihil in, qui ratione, officia sint illum consectetur iusto. Odit, mollitia!
 						</p>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quod excepturi blanditiis est laboriosam mollitia! Ad nisi quibusdam deleniti, nostrum ipsam, accusantium reiciendis dolorum dolore error, architecto sit nihil maiores? Vel quae error natus accusantium!</p>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quod excepturi blanditiis est
+							laboriosam mollitia! Ad nisi quibusdam deleniti, nostrum ipsam, accusantium reiciendis
+							dolorum dolore error, architecto sit nihil maiores? Vel quae error natus accusantium!</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="film">
+			<div class="container p-5">
+				<div class="row p-5">
+					<div class="col p-5 bg-warning shadow shadow-lg">
+						<iframe width="100%" height="500" src="https://www.youtube.com/embed/1RwrSEMei8g"
+							title="YouTube video player" frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="about">
+			<div class="container h-100">
+				<div class="row h-100 d-flex align-items-center">
+					<div class="col-xl-4 mb-3">
+						<div class="card bg-info mb-5 shadow shadow-lg">
+							<div class="card-header py-3 text-light">
+								<strong>Keunggulan 1</strong>
+							</div>
+							<div class="card-body text-light">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga vel neque laboriosam
+								assumenda inventore sint dolorum exercitationem repellendus, laborum sunt quidem
+								distinctio, dolore maiores laudantium. Dicta facere culpa ex tenetur!
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga vel neque laboriosam
+								assumenda inventore sint dolorum exercitationem repellendus, laborum sunt quidem
+								distinctio, dolore maiores laudantium. Dicta facere culpa ex tenetur!
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-4">
+						<div class="card shadow shadow-md">
+							<div class="card-header py-3">
+								<strong>Keunggulan 2</strong>
+							</div>
+							<div class="card-body">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga vel neque laboriosam
+								assumenda inventore sint dolorum exercitationem repellendus, laborum sunt quidem
+								distinctio, dolore maiores laudantium. Dicta facere culpa ex tenetur!
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga vel neque laboriosam
+								assumenda inventore sint dolorum exercitationem repellendus, laborum sunt quidem
+								distinctio, dolore maiores laudantium. Dicta facere culpa ex tenetur!
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-4">
+						<div class="card shadow shadow-md">
+							<div class="card-header py-3">
+								<strong>Keunggulan 3</strong>
+							</div>
+							<div class="card-body">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga vel neque laboriosam
+								assumenda inventore sint dolorum exercitationem repellendus, laborum sunt quidem
+								distinctio, dolore maiores laudantium. Dicta facere culpa ex tenetur!
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga vel neque laboriosam
+								assumenda inventore sint dolorum exercitationem repellendus, laborum sunt quidem
+								distinctio, dolore maiores laudantium. Dicta facere culpa ex tenetur!
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
