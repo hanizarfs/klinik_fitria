@@ -209,7 +209,8 @@
 				<div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span
 							class="nav_logo-name">BBBootstrap</span> </a>
 					<div class="nav_list">
-						<a href="<?php echo base_url('home') ?>" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i>
+						<a href="<?php echo base_url('home') ?>" class="nav_link active"> <i
+								class='bx bx-grid-alt nav_icon'></i>
 							<span class="nav_name">Dashboard</span>
 						</a>
 						<a href="<?php echo base_url('pasien') ?>" class="nav_link"> <i class='bx bx-user nav_icon'></i>
@@ -219,7 +220,7 @@
 								class='bx bx-message-square-detail nav_icon'></i>
 							<span class="nav_name">Tindakan</span>
 						</a>
-						<a href="<?php echo base_url('about') ?>" class="nav_link"> <i
+						<a href="<?php echo base_url('obat') ?>" class="nav_link"> <i
 								class='bx bx-bookmark nav_icon'></i>
 							<span class="nav_name">Obat</span>
 						</a>
@@ -232,45 +233,47 @@
 						class="nav_name">SignOut</span> </a>
 			</nav>
 		</div>
-		<script src="<?php echo base_url('assets/Bootstrap/js/bootstrap.min.js') ?>"></script>
-		<script>
-			document.addEventListener("DOMContentLoaded", function (event) {
+	</div>
 
-				const showNavbar = (toggleId, navId, bodyId, headerId) => {
-					const toggle = document.getElementById(toggleId),
-						nav = document.getElementById(navId),
-						bodypd = document.getElementById(bodyId),
-						headerpd = document.getElementById(headerId)
+	<script src="<?php echo base_url('assets/Bootstrap/js/bootstrap.min.js') ?>"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function (event) {
 
-					// Validate that all variables exist
-					if (toggle && nav && bodypd && headerpd) {
-						toggle.addEventListener('click', () => {
-							// show navbar
-							nav.classList.toggle('show')
-							// change icon
-							toggle.classList.toggle('bx-x')
-							// add padding to body
-							bodypd.classList.toggle('body-pd')
-							// add padding to header
-							headerpd.classList.toggle('body-pd')
-						})
-					}
+			const showNavbar = (toggleId, navId, bodyId, headerId) => {
+				const toggle = document.getElementById(toggleId),
+					nav = document.getElementById(navId),
+					bodypd = document.getElementById(bodyId),
+					headerpd = document.getElementById(headerId)
+
+				// Validate that all variables exist
+				if (toggle && nav && bodypd && headerpd) {
+					toggle.addEventListener('click', () => {
+						// show navbar
+						nav.classList.toggle('show')
+						// change icon
+						toggle.classList.toggle('bx-x')
+						// add padding to body
+						bodypd.classList.toggle('body-pd')
+						// add padding to header
+						headerpd.classList.toggle('body-pd')
+					})
 				}
+			}
 
-				showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header')
+			showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header')
 
-				/*===== LINK ACTIVE =====*/
-				const linkColor = document.querySelectorAll('.nav_link')
+			/*===== LINK ACTIVE =====*/
+			const linkColor = document.querySelectorAll('.nav_link')
 
-				function colorLink() {
-					if (linkColor) {
-						linkColor.forEach(l => l.classList.remove('active'))
-						this.classList.add('active')
-					}
+			function colorLink() {
+				if (linkColor) {
+					linkColor.forEach(l => l.classList.remove('active'))
+					this.classList.add('active')
 				}
-				linkColor.forEach(l => l.addEventListener('click', colorLink))
+			}
+			linkColor.forEach(l => l.addEventListener('click', colorLink))
 
-				// Your code to run since DOM is loaded and ready
-			});
+			// Your code to run since DOM is loaded and ready
+		});
 
-		</script>
+	</script>
