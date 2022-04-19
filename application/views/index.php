@@ -2,33 +2,35 @@
 <html lang="en">
 
 <head>
-	<!-- Required meta tags -->
+	<!--========== Required meta tags ==========-->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- Bootstrap CSS -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<!--========== Bootstrap CSS ==========-->
+	<link rel="stylesheet" href="<?php echo base_url('assets/Bootstrap/css/bootstrap.min.css') ?>">
 
+	<!--========== Poppins Font ==========-->
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+		rel="stylesheet">
+
+	<!--========== CSS ==========-->
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/styleIndex.css') ?>">
+
+	<!--========== Favicon ==========-->
 	<link rel="icon" type="image/x-item" href="https://id.top10place.com/img_files/410213025684784">
+
+	<!--========== Title ==========-->
 	<title>Klinik Fitria</title>
 
-	<style>
-		.hero,
-		.about {
-			height: 100vh;
-		}
-
-	</style>
 </head>
 
 <body>
-	<!-- NAVBAR -->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+	<!--========== NAVBAR ==========-->
+	<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
 		<div class="container">
 			<a class="navbar-brand" href="#">
-				<img src="https://id.top10place.com/img_files/410213025684784" alt="Logo Klinik Fitria"
-					class="img-fluid w-25">
+				<img src="<?php echo base_url('assets/img/logo/logo.jpg') ?>" alt="Logo Klinik Fitria"
+					class="img-fluid">
 			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -36,45 +38,55 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 d-flex justify-content-center">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="#">Home</a>
+						<a class="nav-link active mx-1" href="#">Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Tentang Kami</a>
+						<a class="nav-link mx-1" href="#">Tentang Kami</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Blog</a>
+						<a class="nav-link mx-1" href="#">Blog</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
+						<a class="nav-link mx-1" href="#">Link</a>
 					</li>
 				</ul>
-				<a href="<?php echo base_url('home/beranda') ?>" class="btn btn-primary">Masuk</a>
+				<button href="<?php echo base_url('home/beranda') ?>" class="btn bg-light px-3 text-mute mx-1"
+					disabled>Daftar</button>
+				<a href="<?php echo base_url('home/beranda') ?>" class="btn btn-primary px-3 mx-1">Masuk</a>
 			</div>
 		</div>
 	</nav>
-	<!-- END OF NAVBAR -->
+	<!--========== END OF NAVBAR ==========-->
 
-	<!-- MAIN CONTENT -->
+	<!--========== MAIN CONTENT ==========-->
 	<main class="main">
-		<section class="hero bg-info">
-			<div class="container h-100">
+
+		<!--========== HERO SECTION ==========-->
+		<section class="hero">
+			<div class="container">
 				<div class="row h-100">
 					<div class="col-6 d-flex flex-column justify-content-center">
-						<h1>Klink Fitria</h1>
+						<h1 class="fw-bolder">KLINIK FITRIA</h1>
 						<h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quia vel, repudiandae
 							necessitatibus quos assumenda obcaecati molestiae eaque incidunt omnis illum praesentium,
-							voluptate fugiat commodi cumque dolore doloremque error magnam.</h5>
+							voluptate fugiat.
+						</h5>
+						<span><a href="#about" class="btn bg-light px-3 mt-4 fw-bold">Discover more</a></span>
 					</div>
 					<div class="col-6 d-flex flex-column justify-content-center">
-						<img src="assets/wpa.gif" alt="">
+						<img src="assets/wpa.gif" alt="" class="img-fluid">
 					</div>
 				</div>
 			</div>
 		</section>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+			<path fill="#0099ff" fill-opacity="1" d="M0,96L1440,256L1440,0L0,0Z"></path>
+		</svg>
+		<!--========== END OF HERO SECTION ==========-->
 
-		<section class="about">
+		<section class="about mt-5 pt-5" id="about">
 			<div class="container h-100">
 				<div class="row h-100 gx-5">
 					<div class="col-6 d-flex flex-column justify-content-center">
@@ -90,7 +102,9 @@
 						</p>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quod excepturi blanditiis est
 							laboriosam mollitia! Ad nisi quibusdam deleniti, nostrum ipsam, accusantium reiciendis
-							dolorum dolore error, architecto sit nihil maiores? Vel quae error natus accusantium!</p>
+							dolorum dolore error, architecto sit nihil maiores? Vel quae error natus accusantium!
+						</p>
+						<span><a href="#about" class="btn btn-primary px-3 mt-4 fw-bold">About Klinik Fitria</a></span>
 					</div>
 				</div>
 			</div>
@@ -111,24 +125,9 @@
 			<div class="container h-100">
 				<div class="row h-100 d-flex align-items-center">
 					<div class="col-xl-4 mb-3">
-						<div class="card bg-info mb-5 shadow shadow-lg">
-							<div class="card-header py-3 text-light">
-								<strong>Keunggulan 1</strong>
-							</div>
-							<div class="card-body text-light">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga vel neque laboriosam
-								assumenda inventore sint dolorum exercitationem repellendus, laborum sunt quidem
-								distinctio, dolore maiores laudantium. Dicta facere culpa ex tenetur!
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga vel neque laboriosam
-								assumenda inventore sint dolorum exercitationem repellendus, laborum sunt quidem
-								distinctio, dolore maiores laudantium. Dicta facere culpa ex tenetur!
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-4">
-						<div class="card shadow shadow-md">
+						<div class="card">
 							<div class="card-header py-3">
-								<strong>Keunggulan 2</strong>
+								<h5 class="text-center"><strong>Keunggulan 1</strong></h5>
 							</div>
 							<div class="card-body">
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga vel neque laboriosam
@@ -141,9 +140,24 @@
 						</div>
 					</div>
 					<div class="col-xl-4">
-						<div class="card shadow shadow-md">
+						<div class="card">
 							<div class="card-header py-3">
-								<strong>Keunggulan 3</strong>
+								<h5 class="text-center"><strong>Keunggulan 2</strong></h5>
+							</div>
+							<div class="card-body">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga vel neque laboriosam
+								assumenda inventore sint dolorum exercitationem repellendus, laborum sunt quidem
+								distinctio, dolore maiores laudantium. Dicta facere culpa ex tenetur!
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga vel neque laboriosam
+								assumenda inventore sint dolorum exercitationem repellendus, laborum sunt quidem
+								distinctio, dolore maiores laudantium. Dicta facere culpa ex tenetur!
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-4">
+						<div class="card">
+							<div class="card-header py-3">
+								<h5 class="text-center"><strong>Keunggulan 3</strong></h5>
 							</div>
 							<div class="card-body">
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga vel neque laboriosam
@@ -159,23 +173,54 @@
 			</div>
 		</section>
 	</main>
-
-	<footer class="footer bg-info text-light">
-		<div class="container py-5">
-			<div class="row">
-				<div class="col-xl-4 col-md-4 col-sm-12">
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+		<path fill="#0099ff" fill-opacity="1" d="M0,64L1440,192L1440,320L0,320Z"></path>
+	</svg>
+	<footer class="footer text-light">
+		<div class="container pt-3">
+			<div class="row gx-5">
+				<div class="col-4">
+					<img src="<?php echo base_url("assets/img/logo/logo.jpg") ?>" alt="Logo" class="img-fluid">
+				</div>
+				<div class="col-8">
+					<div class="input-email">
+						<input type="email" name="email" class="form-control py-2 ps-4"
+							placeholder="Tuliskan email anda!">
+						<a href="" class="btn btn-primary btn-email px-5 py-2">Kirim Email</a>
+					</div>
+					<div class="row mt-4">
+						<div class="col-6">
+							<nav class="d-flex flex-column text-end mt-5">
+								<h5>Home</h5>
+								<h5>Tentang Kami</h5>
+								<h5>Blog</h5>
+								<h5>Contact</h5>
+							</nav>
+						</div>
+						<div class="col-6">
+							<nav class="d-flex flex-column text-end mt-5">
+								<h5>Sepanjang jalan kenangan</h5>
+								<h5>Kota Solo</h5>
+								<h5>46258</h5>
+								<h5>Indonesia</h5>
+							</nav>
+						</div>
+					</div>
+					<div class="row mt-5">
+						<div class="col">
+							<hr>
+							<h5 class="text-end">&copy Klinik Fitria 2022</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="row">
+				<div class="col-xl-6 col-md-6 col-sm-12">
 					<a href="#">
 						<img src="https://id.top10place.com/img_files/410213025684784" alt="" class="w-25">
 					</a>
 				</div>
-				<div class="col-xl-4 col-md-4 col-sm-12">
-					<nav class="d-flex flex-column">
-						<a href="#" class="text-light ">Beranda</a>
-						<a href="" class="text-light ">Tentang</a>
-						<a href="" class="text-light ">Blog</a>
-					</nav>
-				</div>
-				<div class="col-xl-4 col-md-4 col-sm-12">
+				<div class="col-xl-6 col-md-6 col-sm-12">
 					<nav class="d-flex flex-column text-end">
 						<p>Sepanjang jalan kenangan</p>
 						<p>Kota Solo</p>
@@ -184,6 +229,11 @@
 					</nav>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col text-center">
+					<h5>&copy Klinik Fitria</h5>
+				</div>
+			</div> -->
 		</div>
 	</footer>
 
@@ -193,6 +243,19 @@
 	</script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
 		integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+	</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+		const navbar = document.querySelector('.navbar');
+		window.onscroll = () => {
+			if (window.scrollY > 300) {
+				navbar.classList.add('active');
+			} else {
+				navbar.classList.remove('active');
+			}
+		};
+
 	</script>
 
 </body>
