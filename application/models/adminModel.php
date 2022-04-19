@@ -51,4 +51,17 @@ class adminModel extends CI_Model {
 		];
         return $this->db->insert('pasiens', $data);
     }
+	function insert_rawat($a) {
+        $data = [
+			'id_rawat'=>$a ['id_rawat'],
+			'tgl_rawat'=>$a ['tgl_rawat'],
+			'total_tindakan'=>$a ['total_tindakan'],
+			'total_obat'=>$a ['total_obat'],
+			'total_harga'=>$a ['total_harga'],
+			'uang_muka'=>$a ['uang_muka'],
+			'kurang'=>$a ['kurang'],
+			'id_pasien'=>$a ['id_pasien'],
+		];
+        return $this->db->insert('rawats', $data);
+    }
 }

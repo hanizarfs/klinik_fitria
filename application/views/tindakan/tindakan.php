@@ -1,48 +1,54 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-  <head> 
-    <meta charset="utf-8"> 
-    <title>Tindakan</title> 
-  </head> 
-  <body> 
-  <?php
-    $this->load->view('layout/navbar');
-  ?> 
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Klinik Fitria</title>
+</head>
 
-    <div class="container"> 
-        <h1><center>Daftar Tindakan</center></h1> 
-      <table class="table table-striped">
-      <a href="tindakan/add" class="btn btn-success">Tambah Data</a> 
-      
-      <form action="<?php base_url('tindakan/search')?>" method="POST" class="my-4">
-        <div class="input-group">
-          <input type="text" name="keyword" placeholder="search">
-          <button class="btn btn-primary px-4" type="submit">Search</button>
-        </div>
-      </form>
-        <tr>
+<body>
+	<?php $this->load->view("layout/navbar.php") ?>
+
+	
+		<!--Container Main start-->
+		<div class="container bg-light">
+			<table class="table table-striped table-hover" id="table">
+				<thead class="table-info">
+					<tr>
             <th>ID Tindakan</th>
             <th>Nama Tindakan</th>
             <th>Biaya</th>
-            <th>Aksi</th>
-
-        </tr>
-        <?php foreach ($data as $item) {?>
-            <tr>
-                <td><?php echo $item['id_tindakan'];?></td>
-                <td><?php echo $item['nama_tindakan'];?></td>
-                <td><?php echo $item['biaya'];?></td>
+					</tr>
+				</thead>
+				<tbody>
+					<?php forEach ($data as $row) { ?>
+					<tr>
+            <td scope="row"><?= $row['id_tindakan'];?></td>
+                <td scope="row"><?= $row['nama_tindakan'];?></td>
+                <td scope="row"><?= $row['biaya'];?></td>
                 <td>
                   <a href="tindakan/edit/<?php echo $item['id_tindakan']; ?>" class="btn btn-warning">Edit</a>
                   <a href="tindakan/delete/<?php echo $item['id_tindakan']; ?>" class="btn btn-danger">Hapus</a>
-                </td>
-            </tr>
-        <?php } ?>
-      </table> 
- 
-    </div> 
-    <!-- load bootstrap js file --> 
-    <script src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script> 
-  </body> 
-</html> 
+            </td>
+
+					</tr>
+					<?php }?>
+				</tbody>
+			</table>
+		</div>
+	</div>
+		<!--Container Main end-->
+		<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+		<script cript src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+		<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				$('#table').DataTable();
+			});
+
+		</script>
+</body>
+
+</html>

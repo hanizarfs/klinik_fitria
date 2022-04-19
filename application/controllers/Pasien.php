@@ -27,6 +27,7 @@ class Pasien extends CI_Controller {
 		$this->load->view('pasien/addPasien');
 	}
 
+
 	public function insertPasien() {
 		$id_pasien = $this->input->post('id_pasien');
 		$nama_pasien = $this->input->post('nama_pasien');
