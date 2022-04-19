@@ -79,7 +79,7 @@
 				// },
 				scrollY: 200,
 				scroller: {
-					loadingIndicator: true
+					// loadingIndicator: true
 				},
 			});
 		});
