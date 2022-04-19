@@ -78,7 +78,7 @@
 		}
 
 		.l-navbar {
-			position: fixed;
+			position: absolute;
 			top: 0;
 			left: -30%;
 			width: var(--nav-width);
@@ -86,7 +86,7 @@
 			background-color: var(--first-color);
 			padding: .5rem 1rem 0 0;
 			transition: .5s;
-			z-index: var(--z-fixed)
+			z-index: 10;
 		}
 
 		.nav {
