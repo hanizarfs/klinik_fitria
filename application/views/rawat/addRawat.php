@@ -18,15 +18,39 @@
 				<h2>Tambah Rawat Baru</h2>
 			</div>
 			<div class="card-body">
-				<form action="<?php echo base_url('pasien/insertRawat'); ?>" method="POST" class="px-5">
-					<label class="form-label" for="nama_pasien">Nama</label>
-					<input class="form-control" type="text" name="nama_pasien"><br>
-					<label class="form-label" for="alamat">Alamat</label>
-					<input class="form-control" type="text" name="alamat"><br>
-					<label class="form-label" for="tgl_lahir">Tanggal Lahir</label>
-					<input class="form-control" type="date" name="tgl_lahir"><br>
-					<label class="form-label" for="no_telp">No Telepon</label>
-					<input class="form-control" type="number" name="no_telp"><br>
+				<form action="<?php echo base_url('rawat/insertRawat'); ?>" method="POST" class="px-5">
+					<div class="mb-3">
+						<label class="form-label" for="id_rawat">ID Rawat</label>
+						<input class="form-control" type="text" name="id_rawat"><br>
+					</div>
+					<div class="mb-3">
+						<label class="form-label" for="tgl_rawat">Tanggal Rawat</label>
+						<input class="form-control" type="date" name="tgl_rawat"><br>
+					</div>
+					<div class="mb-3">
+						<label class="form-label" for="total_tindakan">Total Tindakan</label>
+						<input class="form-control" type="number" name="total_tindakan"><br>
+					</div>
+					<div class="mb-3">
+						<label class="form-label" for="total_obat">Total Obat</label>
+						<input class="form-control" type="text" name="total_obat"><br>
+					</div>
+					<div class="mb-3">
+						<label class="form-label" for="total_harga">Total Harga</label>
+						<input class="form-control" type="text" name="total_harga"><br>
+					</div>
+					<div class="mb-3">
+						<label class="form-label" for="uang_muka">Uang Muka</label>
+						<input class="form-control" type="text" name="uang_muka"><br>
+					</div>
+					<div class="mb-3">
+						<label class="form-label" for="kurang">Kurang</label>
+						<input class="form-control" type="text" name="kurang"><br>
+					</div>
+					<div class="mb-3">
+						<label class="form-label" for="id_pasien">ID Pasien</label>
+						<input class="form-control" type="number" name="id_pasien"><br>
+					</div>
 					<button type="submit" class="btn btn-primary float-end px-4 py-2">Submit</button>
 				</form>
 			</div>

@@ -5,14 +5,7 @@ class adminModel extends CI_Model {
 		$this->load->database();
 	}
 
-	public function get_data_pasien($keyword=null){
-		$this->db->select('*');
-		$this->db->from('pasiens');
-		if(!empty($keyword)){
-			$this->db->like('nama_pasien',$keyword);
-		}
-		return $this->db->get()->result_array();
-	}
+	
 
 	public function get_data_tindakan($keyword=null){
 		$this->db->select('*');
@@ -41,13 +34,18 @@ class adminModel extends CI_Model {
 		return $this->db->get()->result_array();
 	}
 
-	function insertPasien($a) {
+	function insert_rawat($a) {
         $data = [
-			'nama_pasien' => $a['nama_pasien'],
-			'alamat' => $a['alamat'],
-			'tgl_lahir' => $a['tgl_lahir'],
-			'no_telp' => $a['no_telp'],
+			'id_rawat'=>$a ['id_rawat'],
+			'tgl_rawat'=>$a ['tgl_rawat'],
+			'total_tindakan'=>$a ['total_tindakan'],
+			'total_obat'=>$a ['total_obat'],
+			'total_harga'=>$a ['total_harga'],
+			'uang_muka'=>$a ['uang_muka'],
+			'kurang'=>$a ['kurang'],
+			'id_pasien'=>$a ['id_pasien'],
 		];
-        return $this->db->insert('pasiens', $data);
+        return $this->db->insert('rawats', $data);
     }
+	
 }

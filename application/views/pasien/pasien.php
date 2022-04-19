@@ -6,133 +6,69 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Klinik Fitria</title>
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css
-">
 </head>
 
 <body>
-	<?php $this->load->view("layout/navbar") ?>
-	<div class="container">
-		<div class="card mt-5">
-			<div class="card-header">
-				<h1>PASIEN</h1>
-			</div>
-			<div class="card-body">
-				<a href="<?php echo base_url('pasien/addPasien')?>" class="btn btn-primary">Tambah Pasien [+]</a>
-				<form action="<?= base_url('pasien/search') ?>" method="POST" class="my-4">
-					<div class="input-group">
-						<input type="text" class="form-control" name="keyword"
-							placeholder="Cari berdasarkan nama pasien . . .">
-						<span class="input-group-btn">
-							<button class="btn btn-primary px-4" type="submit">Cari</button>
-						</span>
-					</div>
-				</form>
-				<?php if(!empty($keyword)){ ?>
-				<p style="color:orange"><b>Menampilkan data dengan kata kunci : "<?= $keyword; ?>"</b></p>
-				<?php } ?>
-				<table class="table table-striped table-hover" id="example">
-					<thead class="table-info">
-						<tr>
-							<th>ID Pasien</th>
-							<th>Nama</th>
-							<th>Alamat</th>
-							<th>TTL</th>
-							<th>No. Telepon</th>
-						</tr>
-					</thead>
-					<tbody>
-						<?php foreach ($data as $row) { ?>
-						<tr>
-							<td><?php $row['id_pasien'] ?></td>
-							<td scope="row"><?= $row['nama_pasien'] ?></td>
-							<td scope="row"><?= $row['alamat'] ?></td>
-							<td scope="row"><?= $row['tgl_lahir'] ?></td>
-							<td scope="row"><?= $row['no_telp'] ?></td>
-						</tr>
-						<tr>
-							<td>Tiger Nixon</td>
-							<td>System Architect</td>
-							<td>Edinburgh</td>
-							<td>61</td>
-							<td>2011/04/25</td>
-						</tr>
-						<tr>
-							<td>Tiger Nixon</td>
-							<td>System Architect</td>
-							<td>Edinburgh</td>
-							<td>61</td>
-							<td>2011/04/25</td>
-						</tr>
-						<tr>
-							<td>Tiger Nixon</td>
-							<td>System Architect</td>
-							<td>Edinburgh</td>
-							<td>61</td>
-							<td>2011/04/25</td>
-						</tr>
-						<tr>
-							<td>Tiger Nixon</td>
-							<td>System Architect</td>
-							<td>Edinburgh</td>
-							<td>61</td>
-							<td>2011/04/25</td>
-						</tr>
-						<tr>
-							<td>Tiger Nixon</td>
-							<td>System Architect</td>
-							<td>Edinburgh</td>
-							<td>61</td>
-							<td>2011/04/25</td>
-						</tr>
-						<tr>
-							<td>Tiger Nixon</td>
-							<td>System Architect</td>
-							<td>Edinburgh</td>
-							<td>61</td>
-							<td>2011/04/25</td>
-						</tr>
-						<tr>
-							<td>Tiger Nixon</td>
-							<td>System Architect</td>
-							<td>Edinburgh</td>
-							<td>61</td>
-							<td>2011/04/25</td>
-						</tr>
-						<tr>
-							<td>Tiger Nixon</td>
-							<td>System Architect</td>
-							<td>Edinburgh</td>
-							<td>61</td>
-							<td>2011/04/25</td>
-						</tr>
-						<tr>
-							<td>Tiger Nixon</td>
-							<td>System Architect</td>
-							<td>Edinburgh</td>
-							<td>61</td>
-							<td>2011/04/25</td>
-						</tr>
-						<tr>
-							<td>Tiger Nixon</td>
-							<td>System Architect</td>
-							<td>Edinburgh</td>
-							<td>61</td>
-							<td>2011/04/25</td>
-						</tr>
+	<?php $this->load->view("layout/navbar.php") ?>
 
-						<?php }?>
-					</tbody>
-				</table>
-			</div>
-		</div>
+	<!-- Container -->
+	<div class="container bg-light">
+		<h2><a href="<?php echo base_url('pasien/add') ?>" class="btn btn-danger">[+] Tambah</a></h2>
+		<table class="table table-striped table-hover" id="table">
+			<thead class="table-info">
+				<tr>
+					<th>ID Pasien</th>
+					<th>Nama</th>
+					<th>Alamat</th>
+					<th>TTL</th>
+					<th>No. Telepon</th>
+					<th>Aksi</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php forEach ($data as $row) { ?>
+				<tr>
+					<td> <?php echo $row['id_pasien']; ?> </td>
+					<td> <?php echo $row['nama_pasien']; ?> </td>
+					<td> <?php echo $row['alamat']; ?> </td>
+					<td> <?php echo $row['tgl_lahir']; ?> </td>
+					<td> <?php echo $row['no_telp']; ?> </td>
+					<td>
+						<a href="pasien/edit/<?php echo $row['id_pasien'];?>" class="btn btn-warning">Edit</a>
+						<a  class="btn btn-danger">Hapus</a>
+						<a href="pasien/delete/<?php echo $row['id_pasien'];?>" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Hapus</a>
+					</td>
+				</tr>
+				<?php }?>
+			</tbody>
+		</table>
 	</div>
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+	</div>
+	<!--Container Main end-->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script cript src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
 	<script>
 		$(document).ready(function () {
-			$('#example').DataTable();
+			$('#table').DataTable();
 		});
 
 	</script>
