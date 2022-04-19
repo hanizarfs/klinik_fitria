@@ -16,7 +16,6 @@ class obatmodel extends CI_Model {
         $this->db->where('id_obat', $a);
         return $this->db->get('obats')->row_array();
     }
-
     function insert($a)
     {
         $data = [
@@ -26,7 +25,6 @@ class obatmodel extends CI_Model {
         ];
         return $this->db->insert('obats', $data);
     }
-
     function update($a, $id_obat)
     {
         $data = [
@@ -53,4 +51,5 @@ class obatmodel extends CI_Model {
         }
         return $this->db->get()->result_array();
     }
+    
 }

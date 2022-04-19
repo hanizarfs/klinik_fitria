@@ -219,7 +219,7 @@
 								class='bx bx-message-square-detail nav_icon'></i>
 							<span class="nav_name">Tindakan</span>
 						</a>
-						<a href="<?php echo base_url('about') ?>" class="nav_link"> <i
+						<a href="<?php echo base_url('obat') ?>" class="nav_link"> <i
 								class='bx bx-bookmark nav_icon'></i>
 							<span class="nav_name">Obat</span>
 						</a>

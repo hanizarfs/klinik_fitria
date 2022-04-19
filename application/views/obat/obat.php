@@ -1,49 +1,58 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-  <head> 
-    <meta charset="utf-8"> 
-    <title>Obat</title> 
-  </head> 
-  <body> 
-
-  <?php
-    $this->load->view('layout/navbar');
-  ?> 
 
 
-    <div class="container"> 
-        <h1><center>Daftar Obat</center></h1> 
-      <table class="table table-striped">
-      <a href="obat/add" class="btn btn-success">Tambah Data</a> 
-      
-      <form action="<?php base_url('obat/search')?>" method="POST" class="my-4">
-        <div class="input-group">
-          <input type="text" name="keyword" placeholder="search">
-          <button class="btn btn-primary px-4" type="submit">Search</button>
-        </div>
-      </form>
-        <tr>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Klinik Fitria</title>
+</head>
+
+<body>
+	<?php $this->load->view("layout/navbar.php") ?>
+
+	
+		<!--Container Main start-->
+		<div class="container bg-light">
+    <h2><a href="obat/add" class="btn btn-danger">[+] Tambah</a></h2>
+			<table class="table table-striped table-hover" id="table">
+				<thead class="table-info">
+					<tr>
             <th>ID Obat</th>
             <th>Nama</th>
             <th>Harga</th>
             <th>Aksi</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php forEach ($data as $row) { ?>
+					<tr>
+            <td> <?php echo $row['id_obat']; ?> </td>
+            <td> <?php echo $row['nama_obat']; ?> </td>
+            <td> <?php echo $row['harga']; ?> </td>
+            <td>
+              <a href="obat/edit/<?php echo $row['id_obat']; ?>" class="btn btn-warning">Edit</a>
+              <a href="obat/delete/ <?php echo $row['id_obat']; ?>" class="btn btn-danger">Hapus</a>
+            </td>
 
-        </tr>
-        <?php foreach ($data as $item) {?>
-            <tr>
-                <td><?php echo $item['id_obat'];?></td>
-                <td><?php echo $item['nama_obat'];?></td>
-                <td><?php echo $item['harga'];?></td>
-                <td>
-                  <a href="obat/edit/<?php echo $item['id_obat']; ?>" class="btn btn-warning">Edit</a>
-                  <a href="obat/delete/<?php echo $item['id_obat']; ?>" class="btn btn-danger">Hapus</a>
-                </td>
-            </tr>
-        <?php } ?>
-      </table> 
- 
-    </div> 
-    <!-- load bootstrap js file --> 
-    <script src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script> 
-  </body> 
-</html> 
+					</tr>
+					<?php }?>
+				</tbody>
+			</table>
+		</div>
+	</div>
+		<!--Container Main end-->
+		<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+		<script cript src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+		<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				$('#table').DataTable();
+			});
+
+		</script>
+</body>
+
+</html>

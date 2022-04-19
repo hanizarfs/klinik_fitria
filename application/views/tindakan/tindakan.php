@@ -14,25 +14,26 @@
 	
 		<!--Container Main start-->
 		<div class="container bg-light">
+    <h2><a href="tindakan/add" class="btn btn-danger">[+] Tambah</a></h2>
 			<table class="table table-striped table-hover" id="table">
 				<thead class="table-info">
 					<tr>
             <th>ID Tindakan</th>
             <th>Nama Tindakan</th>
             <th>Biaya</th>
+            <th>Aksi</th>
 					</tr>
 				</thead>
 				<tbody>
 					<?php forEach ($data as $row) { ?>
 					<tr>
-            <td scope="row"><?= $row['id_tindakan'];?></td>
-                <td scope="row"><?= $row['nama_tindakan'];?></td>
-                <td scope="row"><?= $row['biaya'];?></td>
-                <td>
-                  <a href="tindakan/edit/<?php echo $item['id_tindakan']; ?>" class="btn btn-warning">Edit</a>
-                  <a href="tindakan/delete/<?php echo $item['id_tindakan']; ?>" class="btn btn-danger">Hapus</a>
+            <td> <?php echo $row['id_tindakan']; ?> </td>
+            <td> <?php echo $row['nama_tindakan']; ?> </td>
+            <td> <?php echo $row['biaya']; ?> </td>
+            <td>
+              <a href="tindakan/edit/ <?php echo $row['id_tindakan']; ?>" class="btn btn-warning">Edit</a>
+              <a href="tindakan/delete/ <?php echo $row['id_tindakan']; ?>" class="btn btn-danger">Hapus</a>
             </td>
-
 					</tr>
 					<?php }?>
 				</tbody>

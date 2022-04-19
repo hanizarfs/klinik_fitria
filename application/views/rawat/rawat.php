@@ -10,10 +10,9 @@
 
 <body>
 	<?php $this->load->view("layout/navbar.php") ?>
-
-	
 		<!--Container Main start-->
 		<div class="container bg-light">
+		<h2><a href="rawat/addRawat" class="btn btn-danger">[+] Tambah</a></h2>
 			<table class="table table-striped table-hover" id="table">
 				<thead class="table-info">
 					<tr>
@@ -25,19 +24,24 @@
 						<th>Uang Muka</th>
 						<th>Kurang</th>
 						<th>ID Pasien</th>
+						<th>Aksi</th>
 					</tr>
 				</thead>
 				<tbody>
 					<?php forEach ($data as $row) { ?>
 					<tr>
-						<td scope="row"><?= $row['id_rawat'] ?></td>
-						<td scope="row"><?= $row['tgl_rawat'] ?></td>
-						<td scope="row"><?= $row['total_tindakan'] ?></td>
-						<td scope="row"><?= $row['total_obat'] ?></td>
-						<td scope="row"><?= $row['total_harga'] ?></td>
-						<td scope="row"><?= $row['uang_muka'] ?></td>
-						<td scope="row"><?= $row['kurang'] ?></td>
-						<td scope="row"><?= $row['id_pasien'] ?></td>
+						<td> <?php echo $row['id_rawat']; ?> </td>
+						<td> <?php echo $row['tgl_rawat']; ?> </td>
+						<td> <?php echo $row['total_tindakan']; ?> </td>
+						<td> <?php echo $row['total_obat']; ?> </td>
+						<td> <?php echo $row['total_harga']; ?> </td>
+						<td> <?php echo $row['uang_muka']; ?> </td>
+						<td> <?php echo $row['kurang']; ?> </td>
+						<td> <?php echo $row['id_pasien']; ?> </td>
+						<td>
+							<a href="rawat/edit/ <?php echo $row['id_rawat'];?>" class="btn btn-warning">Edit</a>
+							<a href="rawat/delete/ <?php echo $row['id_rawat'];?>" class="btn btn-danger">Hapus</a>
+						</td>
 					</tr>
 					<?php }?>
 				</tbody>

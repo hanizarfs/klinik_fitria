@@ -20,15 +20,15 @@
                         <div class="col-12">
                             <form action="<?php echo base_url('obat/update/' . $detail['id_obat']) ?>" method="post" enctype="multipart/form-data">
                                 <div class="mb-3">
-                                    <label for="nama" class="form-label">ID Obat</label>
+                                    <label for="'id_obat'" class="form-label">ID Obat</label>
                                     <input type="text" name="id_obat" class="form-control" id="nama" value="<?php echo $detail['id_obat'] ?>">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="nama" class="form-label">Nama Obat</label>
+                                    <label for="'nama_obat'" class="form-label">Nama Obat</label>
                                     <input type="text" name="nama_obat" class="form-control" id="nama" value="<?php echo $detail['nama_obat'] ?>">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">Harga</label>
+                                    <label for="harga" class="form-label">Harga</label>
                                     <input type="text" name="harga" class="form-control" id="email" value="<?php echo $detail['harga'] ?>">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>

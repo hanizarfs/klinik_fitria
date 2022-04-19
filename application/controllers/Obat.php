@@ -35,13 +35,17 @@ class Obat extends CI_Controller {
 
     public function insert()
     {
-        $this->load->library('upload');
-        if ($this->obatmodel->insert($this->input->post())) {
-            $this->session->set_flashdata('pesan', 'Data berhasil ditambah');
-            redirect(base_url('obat'));
-        }
+        $id_obat = $this->input->post('id_obat');
+		$nama_obat = $this->input->post('nama_obat');
+		$harga = $this->input->post('harga');
+		$data = array(
+			'id_obat' => $id_obat,
+			'nama_obat' => $nama_obat,
+			'harga' => $harga,
+		);
+		$this->obatmodel->insert($data, 'obats');
+		redirect(base_url('obat'));
     }
-
     public function edit($a)
     {
         $data['detail'] = $this->obatmodel->get_detail($a);

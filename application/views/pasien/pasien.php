@@ -14,6 +14,7 @@
 	
 		<!--Container Main start-->
 		<div class="container bg-light">
+		<h2><a href="pasien/addPasien" class="btn btn-danger">[+] Tambah</a></h2>
 			<table class="table table-striped table-hover" id="table">
 				<thead class="table-info">
 					<tr>
@@ -22,16 +23,21 @@
 						<th>Alamat</th>
 						<th>TTL</th>
 						<th>No. Telepon</th>
+						<th>Aksi</th>
 					</tr>
 				</thead>
 				<tbody>
 					<?php forEach ($data as $row) { ?>
 					<tr>
-						<td><?php $row['id_pasien'] ?></td>
-						<td scope="row"><?= $row['nama_pasien'] ?></td>
-						<td scope="row"><?= $row['alamat'] ?></td>
-						<td scope="row"><?= $row['tgl_lahir'] ?></td>
-						<td scope="row"><?= $row['no_telp'] ?></td>
+						<td> <?php echo $row['id_pasien']; ?> </td>
+						<td> <?php echo $row['nama_pasien']; ?> </td>
+						<td> <?php echo $row['alamat']; ?> </td>
+						<td> <?php echo $row['tgl_lahir']; ?> </td>
+						<td> <?php echo $row['no_telp']; ?> </td>
+						<td>
+							<a href="pasien/edit/ <?php echo $row['id_pasien'];?>" class="btn btn-warning">Edit</a>
+							<a href="pasien/delete/ <?php echo $row['id_pasien'];?>" class="btn btn-danger">Hapus</a>
+						</td>
 					</tr>
 					<?php }?>
 				</tbody>
