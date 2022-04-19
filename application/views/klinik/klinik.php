@@ -19,14 +19,13 @@
 				<h1>DATA DOKTER DARI API</h1>
 			</div>
 			<div class="card-body">
-				<table class="table" id="example">
+				<table class="table display" id="example">
 					<thead>
 						<tr>
 							<th>ID Dokter</th>
 							<th>Nama</th>
 						</tr>
 					</thead>
-					<tbody id="dokter"></tbody>
 				</table>
 			</div>
 		</div>
@@ -53,6 +52,7 @@
 			// 		}
 			// 	})
 			// });
+			
 			$('#example').DataTable({
 				serverSide: true,
 				processing: true,
@@ -60,26 +60,16 @@
 				searching: false,
 				paging: false,
 				info: false,
-				ajax: "https://rosihanari.net/api/api.php?get=dokter.json",
-				// ajax: function (data, callback, settings) {
-				// 	var out = [];
-
-				// 	for (var i = data.start, ien = data.start + data.length; i < ien; i++) {
-				// 		out.push([i + '-1', i + '-2', i + '-3', i + '-4', i + '-5']);
-				// 	}
-
-				// 	setTimeout(function () {
-				// 		callback({
-				// 			draw: data.draw,
-				// 			data: out,
-				// 			recordsTotal: 5000000,
-				// 			recordsFiltered: 5000000
-				// 		});
-				// 	}, 50);
-				// },
+				ajax:{
+					url: 'https://rosihanari.net/api/api.php?get=dokter',
+					dataSrc: ''
+				},
+				'columns' : [
+					{data: 'iddokter'},
+					{data: 'namadokter'},
+				],
 				scrollY: 200,
 				scroller: {
-					loadingIndicator: true
 				},
 			});
 		});
