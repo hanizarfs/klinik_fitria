@@ -31,8 +31,8 @@
             <td> <?php echo $row['nama_tindakan']; ?> </td>
             <td> <?php echo $row['biaya']; ?> </td>
             <td>
-              <a href="tindakan/edit/ <?php echo $row['id_tindakan']; ?>" class="btn btn-warning">Edit</a>
-              <a href="tindakan/delete/ <?php echo $row['id_tindakan']; ?>" class="btn btn-danger">Hapus</a>
+              <a href="tindakan/edit/<?php echo $row['id_tindakan']; ?>" class="btn btn-warning">Edit</a>
+              <a href="tindakan/delete/<?php echo $row['id_tindakan']; ?>" class="btn btn-danger">Hapus</a>
             </td>
 					</tr>
 					<?php }?>

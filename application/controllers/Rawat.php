@@ -53,5 +53,18 @@ class Rawat extends CI_Controller {
 		$this->adminModel->insert_rawat($data, 'rawats');
 		redirect(base_url('rawat'));
 	}
+	public function edit($a)
+    {
+        $data['detail']=$this->rawatmodel->get_detail($a);
+        $this->load->view('rawat/edit', $data);
+    }
 
+    public function update($id)
+    {
+        $this->load->library('upload');
+        if ($this->rawatmodel->update($this->input->post(), $id)) {
+            $this->session->set_flashdata('pesan', 'Data berhasil diubah');
+            redirect(base_url('rawat'));
+        }
+    }
 }

@@ -20,16 +20,16 @@
                         <div class="col-12">
                             <form action="<?php echo base_url('tindakan/update/' . $detail['id_tindakan']) ?>" method="post" enctype="multipart/form-data">
                                 <div class="mb-3">
-                                    <label for="nama" class="form-label">ID Tindakan</label>
-                                    <input type="text" name="id_tindakan" class="form-control" id="nama" value="<?php echo $detail['id_tindakan'] ?>">
+                                    <label for="id_tindakan" class="form-label">ID Tindakan</label>
+                                    <input type="text" name="id_tindakan" class="form-control" id="id_tindakan" value="<?php echo $detail['id_tindakan'] ?>">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="nama" class="form-label">Nama Tindakan</label>
-                                    <input type="text" name="nama_tindakan" class="form-control" id="nama" value="<?php echo $detail['nama_tindakan'] ?>">
+                                    <label for="nama_tindakan" class="form-label">Nama Tindakan</label>
+                                    <input type="text" name="nama_tindakan" class="form-control" id="nama_tindakan" value="<?php echo $detail['nama_tindakan'] ?>">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">Biaya</label>
-                                    <input type="text" name="biaya" class="form-control" id="email" value="<?php echo $detail['biaya'] ?>">
+                                    <label for="biaya" class="form-label">Biaya</label>
+                                    <input type="text" name="biaya" class="form-control" id="biaya" value="<?php echo $detail['biaya'] ?>">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>

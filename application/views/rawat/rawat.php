@@ -10,7 +10,6 @@
 
 <body>
 	<?php $this->load->view("layout/navbar.php") ?>
-<<<<<<< HEAD
 		<!--Container Main start-->
 		<div class="container bg-light">
 		<h2><a href="rawat/addRawat" class="btn btn-danger">[+] Tambah</a></h2>
@@ -40,8 +39,8 @@
 						<td> <?php echo $row['kurang']; ?> </td>
 						<td> <?php echo $row['id_pasien']; ?> </td>
 						<td>
-							<a href="rawat/edit/ <?php echo $row['id_rawat'];?>" class="btn btn-warning">Edit</a>
-							<a href="rawat/delete/ <?php echo $row['id_rawat'];?>" class="btn btn-danger">Hapus</a>
+							<a href="rawat/edit/<?php echo $row['id_rawat'];?>" class="btn btn-warning">Edit</a>
+							<a href="rawat/delete/<?php echo $row['id_rawat'];?>" class="btn btn-danger">Hapus</a>
 						</td>
 					</tr>
 					<?php }?>
@@ -57,53 +56,6 @@
 			$(document).ready(function () {
 				$('#table').DataTable();
 			});
-=======
-
->>>>>>> 0e203ce573b9477a5aefbb95c4aa9b90201ca016
-
-	<!--Container Main start-->
-	<div class="container bg-light">
-		<table class="table table-striped table-hover" id="table">
-			<thead class="table-info">
-				<tr>
-					<th>ID Rawat</th>
-					<th>Tanggal</th>
-					<th>Total Tindakan</th>
-					<th>Total Obat</th>
-					<th>Total Harga</th>
-					<th>Uang Muka</th>
-					<th>Kurang</th>
-					<th>ID Pasien</th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php forEach ($data as $row) { ?>
-				<tr>
-					<td scope="row"><?= $row['id_rawat'] ?></td>
-					<td scope="row"><?= $row['tgl_rawat'] ?></td>
-					<td scope="row"><?= $row['total_tindakan'] ?></td>
-					<td scope="row"><?= $row['total_obat'] ?></td>
-					<td scope="row"><?= $row['total_harga'] ?></td>
-					<td scope="row"><?= $row['uang_muka'] ?></td>
-					<td scope="row"><?= $row['kurang'] ?></td>
-					<td scope="row"><?= $row['id_pasien'] ?></td>
-				</tr>
-				<?php }?>
-			</tbody>
-		</table>
-	</div>
-	<link rel="stylesheet" href="<?php $this->load->view('layout/footer') ?>">
-	<!--Container Main end-->
-	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-	<script cript src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-	<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-	<script>
-		$(document).ready(function () {
-			$('#table').DataTable();
-		});
-
-	</script>
-
 </body>
 
 </html>

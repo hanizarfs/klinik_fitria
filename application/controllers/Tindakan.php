@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Tindakan extends CI_Controller {
 
-	public function __construct()
+    public function __construct()
     {
         parent::__construct();
         $this->load->library(array('form_validation','email', 'session'));
@@ -35,13 +35,17 @@ class Tindakan extends CI_Controller {
 
     public function insert()
     {
-        $this->load->library('upload');
-        if ($this->tindakanmodel->insert($this->input->post())) {
-            $this->session->set_flashdata('pesan', 'Data berhasil ditambah');
-            redirect(base_url('tindakan'));
-        }
+        $id_tindakan = $this->input->post('id_tindakan');
+		$nama_tindakan = $this->input->post('nama_tindakan');
+		$harga = $this->input->post('harga');
+		$data = array(
+			'id_tindakan' => $id_tindakan,
+			'nama_tindakan' => $nama_tindakan,
+			'harga' => $harga,
+		);
+		$this->tindakanmodel->insert($data, 'tindakans');
+		redirect(base_url('tindakan'));
     }
-
     public function edit($a)
     {
         $data['detail'] = $this->tindakanmodel->get_detail($a);
@@ -75,4 +79,76 @@ class Tindakan extends CI_Controller {
         );
         $this->load->view('tindakan/tindakan', $data);
     }
+	// public function __construct()
+    // {
+    //     parent::__construct();
+    //     $this->load->library(array('form_validation','email', 'session'));
+    //     $this->load->helper(array('text', 'url', 'cookie', 'string'));
+    //     $this->load->model('tindakanmodel');
+    // }
+
+    // function index()
+    // {
+    //     $keyword = $this->input->post('keyword');
+    //     $data = $this->tindakanmodel->get_keyword($keyword);
+    //     $data = array(
+    //         'keyword' => $keyword,
+    //         'data' => $data
+    //     );
+    //     $this->load->view('tindakan/tindakan', $data);
+    // }
+
+    // public function detail($a = null)
+    // {
+    //     $data['detail'] = $this->tindakanmodel->get_detail($a);
+    //     $this->load->view('tindakan/detail', $data);
+    // }
+
+    // public function add()
+    // {
+    //     $this->load->view('tindakan/add');
+    // }
+
+    // public function insert()
+    // {
+    //     $this->load->library('upload');
+    //     if ($this->tindakanmodel->insert($this->input->post())) {
+    //         $this->session->set_flashdata('pesan', 'Data berhasil ditambah');
+    //         redirect(base_url('tindakan'));
+    //     }
+    // }
+
+    // public function edit($a)
+    // {
+    //     $data['detail'] = $this->tindakanmodel->get_detail($a);
+    //     $this->load->view('tindakan/edit', $data);
+    // }
+
+    // public function update($id)
+    // {
+    //     $this->load->library('upload');
+    //     if ($this->tindakanmodel->update($this->input->post(), $id)) {
+    //         $this->session->set_flashdata('pesan', 'Data berhasil diubah');
+    //         redirect(base_url('tindakan'));
+    //     }
+    // }
+
+    // public function delete($id)
+    // {
+    //     if ($this->tindakanmodel->delete($id)) {
+    //         $this->session->set_flashdata('pesan', 'Data berhasil dihapus');
+    //         redirect(base_url('tindakan'));
+    //     }
+    // }
+
+    // public function search()
+    // {
+    //     $keyword = $this->input->post('keyword');
+    //     $data['tindakan'] = $this->tindakanmodel->get_keyword($keyword);
+    //     $data = array(
+    //         'keyword' => $keyword,
+    //         'data' => $data
+    //     );
+    //     $this->load->view('tindakan/tindakan', $data);
+    // }
 }
