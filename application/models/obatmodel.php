@@ -38,7 +38,7 @@ class obatmodel extends CI_Model {
 
     function delete($id_obat)
     {
-        $this->db->where('id_obat', $id);
+        $this->db->where('id_obat', $id_obat);
         return $this->db->delete('obats');
     }
 
