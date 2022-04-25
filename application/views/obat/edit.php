@@ -18,18 +18,18 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12">
-                            <form action="<?php echo base_url('obat/update/' . $data_obat['id_obat']) ?>" method="post" enctype="multipart/form-data">
+                            <form action="<?php echo base_url('obat/update/' . $detail['id_obat']) ?>" method="post" enctype="multipart/form-data">
                                 <div class="mb-3">
                                     <label for="'id_obat'" class="form-label">ID Obat</label>
-                                    <input type="text" name="id_obat" class="form-control" id="nama" value="<?php echo $data_obat['id_obat'] ?>" disabled>
+                                    <input type="text" name="id_obat" class="form-control" id="nama" value="<?php echo $detail['id_obat'] ?>">
                                 </div>
                                 <div class="mb-3">
                                     <label for="'nama_obat'" class="form-label">Nama Obat</label>
-                                    <input type="text" name="nama_obat" class="form-control" id="nama" value="<?php echo $data_obat['nama_obat'] ?>">
+                                    <input type="text" name="nama_obat" class="form-control" id="nama" value="<?php echo $detail['nama_obat'] ?>">
                                 </div>
                                 <div class="mb-3">
                                     <label for="harga" class="form-label">Harga</label>
-                                    <input type="text" name="harga" class="form-control" id="email" value="<?php echo $data_obat['harga'] ?>">
+                                    <input type="text" name="harga" class="form-control" id="email" value="<?php echo $detail['harga'] ?>">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>

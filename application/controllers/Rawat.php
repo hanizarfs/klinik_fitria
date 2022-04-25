@@ -31,7 +31,8 @@ class Rawat extends CI_Controller {
 		$this->load->view('rawat/addRawat');
 	}
 	public function insertRawat() {
-		$id_rawat = $this->input->post('id_rawat');
+		$id = $this->input->post('id');
+        $id_rawat = "R00";
 		$tgl_rawat = $this->input->post('tgl_rawat');
 		$total_tindakan = $this->input->post('total_tindakan');  
 		$total_obat = $this->input->post('total_obat');  
@@ -41,6 +42,7 @@ class Rawat extends CI_Controller {
 		$id_pasien = $this->input->post('id_pasien');  
 
 		$data = array(
+			'id' => $id,
 			'id_rawat'=>$id_rawat,
 			'tgl_rawat'=>$tgl_rawat,
 			'total_tindakan'=>$total_tindakan,

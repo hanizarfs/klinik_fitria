@@ -19,10 +19,7 @@
 			</div>
 			<div class="card-body">
 				<form action="<?php echo base_url('rawat/insertRawat'); ?>" method="POST" class="px-5">
-					<div class="mb-3">
-						<label class="form-label" for="id_rawat">ID Rawat</label>
-						<input class="form-control" type="text" name="id_rawat"><br>
-					</div>
+
 					<div class="mb-3">
 						<label class="form-label" for="tgl_rawat">Tanggal Rawat</label>
 						<input class="form-control" type="date" name="tgl_rawat"><br>

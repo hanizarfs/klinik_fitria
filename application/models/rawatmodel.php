@@ -18,18 +18,33 @@ class rawatmodel extends CI_Model {
     function insert($a)
     {
         $data = [
-            'id_' => $a['id_tindakan'],
-            'nama_tindakan' => $a['nama_tindakan'],
-            'harga' => $a['harga'],
+            'id' => $a['id'],
+            'id_rawat' => $a['id_rawat'],
+            'tgl_rawat' => $a['tgl_rawat'],
+            'total_tindakan' => $a['total_tindakan'],
+            'total_obat' => $a['total_obat'],
+            'total_harga' => $a['total_harga'],
+            'uang_muka' => $a['uang_muka'],
+            'kurang' => $a['kurang'],
+            'id_pasien' => $a['id_pasien'],
         ];
-        return $this->db->insert('tindakans', $data);
+        $this->db->insert('rawats', $data);
+        $this->db->where('id_rawat', 'R00');
+        $this->db->set('id_rawat', 'CONCAT(id_rawat, id)', FALSE);
+        return $this->db->update('rawats');
     }
     function update($a, $id_tindakan)
     {
         $data = [
-            'id_tindakan' => $a['id_tindakan'],
-            'nama_tindakan' => $a['nama_tindakan'],
-            'harga' => $a['harga'],
+            'id' => $a['id'],
+            'id_rawat' => $a['id_rawat'],
+            'tgl_rawat' => $a['tgl_rawat'],
+            'total_tindakan' => $a['total_tindakan'],
+            'total_obat' => $a['total_obat'],
+            'total_harga' => $a['total_harga'],
+            'uang_muka' => $a['uang_muka'],
+            'kurang' => $a['kurang'],
+            'id_pasien' => $a['id_pasien'],
         ];
         $this->db->where('id_tindakan', $id_tindakan);
         return $this->db->update('tindakans', $data);

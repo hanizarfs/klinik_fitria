@@ -22,26 +22,28 @@ class Tindakan extends CI_Controller {
         $this->load->view('tindakan/tindakan', $data);
     }
 
-    public function detail($a = null) {
+    public function detail($a = null)
+    {
         $data['detail'] = $this->tindakanmodel->get_detail($a);
         $this->load->view('tindakan/detail', $data);
     }
 
-    public function add() {
+    public function add()
+    {
         $this->load->view('tindakan/add');
     }
 
-    public function insert() {
-		$id = $this->input->post('id');
-		$id_tindakan = "TK00";
+    public function insert()
+    {
+        $id = $this->input->post('id');
+        $id_tindakan = "T00";
 		$nama_tindakan = $this->input->post('nama_tindakan');
-		$harga = $this->input->post('harga');
-
+		$biaya = $this->input->post('biaya');
 		$data = array(
-			'id' => $id,
-			'id_tindakan' => $id_tindakan,
+            'id' => $id,
+            'id_tindakan' => $id_tindakan,
 			'nama_tindakan' => $nama_tindakan,
-			'harga' => $harga,
+			'biaya' => $biaya,
 		);
 		$this->tindakanmodel->insert($data, 'tindakans');
 		redirect(base_url('tindakan'));

@@ -17,26 +17,23 @@ class tindakanmodel extends CI_Model {
     }
     function insert($a)
     {
-		$data = [
-			'id_tindakan' => $a['id_tindakan'],
-			'nama_tindakan' => $a['nama_tindakan'],
-			'harga' => $a['harga'],
-		];
-        $this->db->insert('tindakans', $data);
-		$this->db->where('id_tindakan', 'TK00');
-		$this->db->set('id_tindakan', 'CONCAT(id_tindakan, id)', FALSE);
-		return $this->db->update('tindakans');
+            $data = [
+                'id' => $a['id'],
+			    'id_tindakan' => $a['id_tindakan'],
+                'nama_tindakan' => $a['nama_tindakan'],
+                'biaya' => $a['biaya'],
+            ];
+            $this->db->insert('tindakans', $data);
+            $this->db->where('id_tindakan', 'T00');
+            $this->db->set('id_tindakan', 'CONCAT(id_tindakan, id)', FALSE);
+            return $this->db->update('tindakans');
     }
     function update($a, $id_tindakan)
     {
         $data = [
-            'tgl_rawat' => $a['tgl_rawat'],
-            'total_tindakan' => $a[ 'total_tindakan'],
-            'total_obat' => $a[ 'total_obat'],
-            'total_harga' => $a[ 'total_harga'],
-            'uang_muka' => $a['uang_muka'],
-            'kurang' => $a['kurang'],
-            'id_pasien' => $a[ 'id_pasien'],
+                
+                'nama_tindakan' => $a['nama_tindakan'],
+                'biaya' => $a['biaya'],
         ];
         $this->db->where('id_tindakan', $id_tindakan);
         return $this->db->update('tindakans', $data);

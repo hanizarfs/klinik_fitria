@@ -213,7 +213,7 @@
 								class='bx bx-grid-alt nav_icon'></i>
 							<span class="nav_name">Dashboard</span>
 						</a>
-						<a href="<?php echo base_url('pasien') ?>" class="nav_link"> <i class='bx bx-user nav_icon'></i>
+						<a href="<?php echo base_url('pasien') ?>" class="nav_link"> <i class="bx bx-user nav_icon"></i>
 							<span class="nav_name">Pasien</span>
 						</a>
 						<a href="<?php echo base_url('tindakan') ?>" class="nav_link"> <i

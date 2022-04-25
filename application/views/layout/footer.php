@@ -17,8 +17,8 @@
 				<div class="col-xl-4 col-md-4 col-sm-12">
 					<nav class="d-flex flex-column">
 						<a href="#" class="text-light ">Beranda</a>
-						<a href="" class="text-light ">Tentang</a>
-						<a href="" class="text-light ">Blog</a>
+						<a href="#" class="text-light ">Tentang</a>
+						<a href="#" class="text-light ">Blog</a>
 					</nav>
 				</div>
 				<div class="col-xl-4 col-md-4 col-sm-12">
