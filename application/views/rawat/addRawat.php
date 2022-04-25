@@ -9,7 +9,6 @@
 	<link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>" />
 	<title>Klinik Fitria</title>
 </head>
-
 <body>
 	<?php $this->load->view('layout/navbar'); ?>
 	<div class="container">
