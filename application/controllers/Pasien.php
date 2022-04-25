@@ -21,13 +21,15 @@ class Pasien extends CI_Controller {
 
 	// Function untuk menambah data pasien
 	public function insert() {
-		$id_pasien = $this->input->post('id_pasien');
+		$id = $this->input->post('id');
+		$id_pasien = "PN00";
 		$nama_pasien = $this->input->post('nama_pasien');
 		$alamat = $this->input->post('alamat');
 		$tgl_lahir = $this->input->post('tgl_lahir');  
 		$no_telp = $this->input->post('no_telp');  
 
 		$data = array(
+			'id' => $id,
 			'id_pasien' => $id_pasien,
 			'nama_pasien' => $nama_pasien,
 			'alamat' => $alamat,
@@ -47,14 +49,12 @@ class Pasien extends CI_Controller {
 
 	// Function untuk mengupdate data hasil dari tampilan edit
     public function update($id_pasien) {
-		$id_pasien = $this->input->post('id_pasien');
 		$nama_pasien = $this->input->post('nama_pasien');
 		$alamat = $this->input->post('alamat');
 		$tgl_lahir = $this->input->post('tgl_lahir');  
 		$no_telp = $this->input->post('no_telp');  
 
 		$data = array(
-			'id_pasien' => $id_pasien,
 			'nama_pasien' => $nama_pasien,
 			'alamat' => $alamat,
 			'tgl_lahir' => $tgl_lahir,
