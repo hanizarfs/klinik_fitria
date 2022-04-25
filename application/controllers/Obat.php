@@ -35,10 +35,12 @@ class Obat extends CI_Controller {
 
     public function insert()
     {
-        $id_obat = $this->input->post('id_obat');
+		$id = $this->input->post('id');
+        $id_obat = 'OT00';
 		$nama_obat = $this->input->post('nama_obat');
 		$harga = $this->input->post('harga');
 		$data = array(
+			'id' => $id,
 			'id_obat' => $id_obat,
 			'nama_obat' => $nama_obat,
 			'harga' => $harga,
@@ -46,37 +48,36 @@ class Obat extends CI_Controller {
 		$this->obatmodel->insert($data, 'obats');
 		redirect(base_url('obat'));
     }
-    public function edit($a)
-    {
-        $data['detail'] = $this->obatmodel->get_detail($a);
+
+	// Function untuk mengarahkan ke tampilan edit
+	public function edit($a) {
+        $data['data_obat'] = $this->obatmodel->edit_data($a);
         $this->load->view('obat/edit', $data);
     }
 
-    public function update($id)
-    {
-        $this->load->library('upload');
-        if ($this->obatmodel->update($this->input->post(), $id)) {
-            $this->session->set_flashdata('pesan', 'Data berhasil diubah');
-            redirect(base_url('obat'));
-        }
+	// Function untuk mengupdate data hasil dari tampilan edit
+    public function update($id_obat) {
+		$nama_obat = $this->input->post('nama_obat');
+		$harga = $this->input->post('harga');
+
+		$data = array(
+			'nama_obat' => $nama_obat,
+			'harga' => $harga,
+		);		
+		$nama_obat = $this->input->post('nama_obat');
+		$harga = $this->input->post('harga');
+
+		$data = array(
+			'nama_obat' => $nama_obat,
+			'harga' => $harga,
+		);
+
+		$this->obatmodel->update_data($data, $id_obat);
+		redirect(base_url('obat'));
     }
 
-    public function delete($id)
-    {
-        if ($this->obatmodel->delete($id)) {
-            $this->session->set_flashdata('pesan', 'Data berhasil dihapus');
-            redirect(base_url('obat'));
-        }
-    }
-
-    public function search()
-    {
-        $keyword = $this->input->post('keyword');
-        $data['obat'] = $this->obatmodel->get_keyword($keyword);
-        $data = array(
-            'keyword' => $keyword,
-            'data' => $data
-        );
-        $this->load->view('obat/obat', $data);
-    }
+	public function delete($id_obat) {
+		$this->obatmodel->delete_data($id_obat);
+		redirect(base_url('obat'));
+	}
 }

@@ -34,7 +34,7 @@
             <td> <?php echo $row['harga']; ?> </td>
             <td>
               <a href="obat/edit/<?php echo $row['id_obat']; ?>" class="btn btn-warning">Edit</a>
-              <a href="obat/delete/ <?php echo $row['id_obat']; ?>" class="btn btn-danger">Hapus</a>
+              <a href="obat/delete/<?php echo $row['id_obat']; ?>" class="btn btn-danger">Hapus</a>
             </td>
 
 					</tr>
